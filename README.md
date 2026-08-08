@@ -15,10 +15,9 @@
 ## 项目结构
 
 ```
-src/
-  ImageSpider.App/           # WPF 桌面端
-  ImageSpider.Core/          # 模型与接口
-  ImageSpider.Infrastructure/ # API + 爬虫实现
+ImageSpider.App/           # WPF 桌面端
+ImageSpider.Core/          # 模型与接口
+ImageSpider.Infrastructure/ # API + 爬虫实现
 ```
 
 ## 快速开始
@@ -32,7 +31,7 @@ src/
 
 ```bash
 cd d:\Projects\DevTools\ImageSpider
-dotnet run --project src/ImageSpider.App
+dotnet run --project ImageSpider.App
 ```
 
 ### API 密钥配置
