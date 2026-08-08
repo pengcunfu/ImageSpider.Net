@@ -1,0 +1,69 @@
+<Window x:Class="ImageSpider.App.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="设置" Height="560" Width="540"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize" MinHeight="400" MinWidth="480">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="API 密钥（在对应平台申请）" FontWeight="SemiBold" FontSize="13" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Bing Image Search" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <CheckBox Content="启用 Bing API" IsChecked="{Binding BingEnabled}" Margin="0,0,0,4"/>
+                <TextBlock Text="Subscription Key" FontSize="11" Foreground="#666"/>
+                <PasswordBox x:Name="BingKeyBox" Margin="0,2,0,12"/>
+
+                <TextBlock Text="Google Custom Search（图片）" FontWeight="SemiBold" Margin="0,4,0,4"/>
+                <CheckBox Content="启用 Google API" IsChecked="{Binding GoogleEnabled}" Margin="0,0,0,4"/>
+                <TextBlock Text="API Key" FontSize="11" Foreground="#666"/>
+                <TextBox Text="{Binding GoogleApiKey}" Margin="0,2,0,4"/>
+                <TextBlock Text="搜索引擎 ID (cx)" FontSize="11" Foreground="#666"/>
+                <TextBox Text="{Binding GoogleSearchEngineId}" Margin="0,2,0,12"/>
+
+                <TextBlock Text="Pexels" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <CheckBox Content="启用 Pexels" IsChecked="{Binding PexelsEnabled}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding PexelsApiKey}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Pixabay" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <CheckBox Content="启用 Pixabay" IsChecked="{Binding PixabayEnabled}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding PixabayApiKey}" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Unsplash" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <CheckBox Content="启用 Unsplash" IsChecked="{Binding UnsplashEnabled}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding UnsplashAccessKey}" Margin="0,0,0,16"/>
+
+                <TextBlock Text="爬虫来源" FontWeight="SemiBold" FontSize="13" Margin="0,0,0,8"/>
+                <CheckBox Content="百度图片" IsChecked="{Binding BaiduEnabled}" Margin="0,0,0,4"/>
+                <CheckBox Content="360 图片" IsChecked="{Binding So360Enabled}" Margin="0,0,0,4"/>
+                <CheckBox Content="搜狗图片" IsChecked="{Binding SogouEnabled}" Margin="0,0,0,4"/>
+                <CheckBox Content="必应图片（爬虫）" IsChecked="{Binding BingScrapeEnabled}" Margin="0,0,0,4"/>
+                <CheckBox Content="DuckDuckGo 图片" IsChecked="{Binding DuckDuckGoEnabled}" Margin="0,0,0,8"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                    <TextBlock Text="请求间隔 (ms)" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding RequestDelayMs}" Width="80"/>
+                </StackPanel>
+
+                <TextBlock Text="下载目录" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                <Grid Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding DownloadDirectory}" Margin="0,0,8,0"/>
+                    <Button Grid.Column="1" Content="浏览..." Click="BrowseDownloadDir_Click" Padding="12,4"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="取消" IsCancel="True" Padding="16,6" Margin="0,0,8,0"/>
+            <Button Content="保存" IsDefault="True" Click="Save_Click" Padding="16,6"/>
+        </StackPanel>
+    </Grid>
+</Window>

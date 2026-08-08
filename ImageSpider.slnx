@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ImageSpider.App/ImageSpider.App.csproj" />
+    <Project Path="src/ImageSpider.Core/ImageSpider.Core.csproj" />
+    <Project Path="src/ImageSpider.Infrastructure/ImageSpider.Infrastructure.csproj" />
+  </Folder>
+</Solution>
